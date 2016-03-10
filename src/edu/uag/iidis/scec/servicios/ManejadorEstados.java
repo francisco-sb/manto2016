@@ -39,6 +39,27 @@ public class ManejadorEstados {
         }
     }
 
+    public Collection listarEstadoPorNombre(String nombre) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">guardarUsuario(usuario)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscaEstado(nombre);
+            log.debug("Consulta "+resultado);
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
     public void eliminarEstado(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarEstado(estado)");

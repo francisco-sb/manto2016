@@ -5,6 +5,7 @@
     <head>
       <script src="http://maps.googleapis.com/maps/api/js"></script>
       <script type='text/javascript' src='js/googlemaps.js'></script>
+      <script type='text/javascript' src='js/ajaxEstados.js'></script>
     </head>
 
     <style type="text/css">
@@ -85,15 +86,29 @@
             </tr>
             <tr>
                 <td align="right">
-                    <fmt:message key="formaNuevoLugar.etiqueta.estado" />
+                    <fmt:message key="formaNuevoLugar.etiqueta.buscarestado" />
                 </td>
                 <td align="left">
-                    <input type="text" 
-                           name="estado" 
+                    <input type="text"
+                           id="bestado"  
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevoLugar.estado}" />
+                           value="${formaNuevoLugar.estado}"
+                           onkeyup="listandoEstados()" />
                 </td>
+            </tr>
+            <tr align="center">
+              <td align="right">
+                <fmt:message key="formaNuevoLugar.etiqueta.estado" />
+              </td>
+              <td align="left">
+                <select id="listaEstados" name="estado" required>
+                  <option value="" disabled selected hidden>Seleccione un estado</option>
+                  <c:forEach var="estado" items="${formaNuevoLugar.estados}">
+                    <option value='<c:out value="${lugar.nombre}"/>'><c:out value="${estado.nombre}"/></option>
+                  </c:forEach>
+                </select>
+              </td>
             </tr>
             <tr>
                 <td align="right">

@@ -1,5 +1,7 @@
 package edu.uag.iidis.scec.vista;
 
+import java.util.Collection;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionError;
@@ -23,7 +25,8 @@ public final class FormaNuevoLugar
     private Long poblacion;
     private Long latitud;
     private Long longitud;
-    private String estado;    
+    private String estado; 
+    Collection estados;   
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -74,6 +77,15 @@ public final class FormaNuevoLugar
     public String getEstado() {
         return (this.estado);
     }
+
+    public void setEstados(Collection estados){
+        this.estados = estados;
+    }
+
+    public Collection getEstados(){
+        return (this.estados);
+    }
+
     //**********************************************
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {

@@ -19,6 +19,7 @@ public final class FormaListadoEstados
 
     private Collection estados;
     private int contador;
+    private String nombre;
 
 
     public void setEstados(Collection estados) {
@@ -37,6 +38,13 @@ public final class FormaListadoEstados
         return (this.contador);
     }
 
+    public String getNombre(){
+        return (this.nombre);
+    }
+
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
