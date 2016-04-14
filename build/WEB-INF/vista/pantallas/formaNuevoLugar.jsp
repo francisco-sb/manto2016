@@ -66,6 +66,7 @@
                 </td>
                 <td align="left">
                     <input type="text" 
+                           id="latitud" 
                            name="latitud" 
                            size="50" 
                            maxlength="100" 
@@ -77,7 +78,8 @@
                     <fmt:message key="formaNuevoLugar.etiqueta.longitud" />
                 </td>
                 <td align="left">
-                    <input type="text" 
+                    <input type="text"
+                           id="longitud"
                            name="longitud" 
                            size="50" 
                            maxlength="100" 

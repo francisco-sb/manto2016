@@ -19,6 +19,10 @@
             <td class="clsMenuBarItem"><a href="solicitarListarLugares.do">Lugar</td>
             <td>|</td>            
             <td class="clsMenuBarItem"><a href="solicitarListarRecomendaciones.do">Recomendacion</td>
+            <td>|</td>            
+            <td class="clsMenuBarItem"><a href="solicitarReportesLugares.do">Reportes Lugares</td>
+            <td>|</td>            
+            <td class="clsMenuBarItem"><a href="solicitarReportesRecomendaciones.do">Reportes Recomendaciones</td>
             <td width="100%"></td>
         </tr>
     </table>

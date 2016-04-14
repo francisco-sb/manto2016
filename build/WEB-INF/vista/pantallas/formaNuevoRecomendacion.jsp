@@ -2,48 +2,14 @@
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
-    <script type="text/javascript">
-      function select_lugar () {
-          var valor = document.getElementById("lugar").value;
-          var xmlhttp=new XMLHttpRequest();
-                      
-          xmlhttp.onreadystatechange=function(){
-            if(xmlhttp.status==404){
-                document.getElementById("estado").value="Page not found";
-            }
-            if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                document.getElementById("estado").value=xmlhttp.responseText;
-            }
-          };
-          xmlhttp.open("GET","ListarEstado.do?nombre="+valor,true);
-          xmlhttp.send();
-    
-      }
-
-      function buscar_lugar () {
-          var valor = document.getElementById("buscar").value;
-          var xmlhttp=new XMLHttpRequest();
-                      
-          xmlhttp.onreadystatechange=function(){
-            if(xmlhttp.status==404){
-                document.getElementById("lugar").innerHTML="Page not found";
-            }
-            if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                document.getElementById("lugar").innerHTML=xmlhttp.responseText;
-            }
-          };
-          xmlhttp.open("GET","BuscarLugares.do?nombre="+valor,true);
-          xmlhttp.send();
-    
-      }
-    </script>
+    <script type='text/javascript' src='js/ajaxRecomendacion.js'></script>
 
     <br>
     <font size='5'><fmt:message key="formaNuevoRecomendacion.titulo" /></font>
 
     <form id="forma" action="procesarRegistroRecomendacion.do" method="post">
         <table>
-            <tr>
+            <!--<tr>
                 <td colspan="2">
                    <html:errors />
                 </td>
@@ -59,7 +25,7 @@
                            maxlength="100" 
                            onkeyup="buscar_lugar()" />
                 </td>
-            </tr>
+            </tr>-->
             <tr>
                 <td align="right">
                     <fmt:message key="formaNuevoRecomendacion.etiqueta.nombre" />
@@ -82,12 +48,16 @@
                 <fmt:message key="formaNuevoRecomendacion.etiqueta.estado" />
               </td>
               <td align="left">
+                <!--<div id="estado">
+                  ${lugar.estado}
+                </div>-->
                 <input type="text" 
                        id="estado"
                        name="estado" 
                        size="50" 
                        maxlength="100" 
-                       value="${formaNuevoRecomendacion.estado}" 
+                       value="${lugar.estado}"
+                       style="border: none;" 
                        readonly />
                 </td>
             </tr>
@@ -113,11 +83,6 @@
                            size="50" 
                            maxlength="100" 
                            value="${formaNuevoRecomendacion.fecha}" />
-                           <!--<input type="text" 
-                           name="fecha" 
-                           size="20" 
-                           maxlength="100" 
-                           value="${formaNuevoRecomendacion.fecha}" />-->
                 </td>
             </tr>
             <tr>

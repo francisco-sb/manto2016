@@ -88,6 +88,16 @@
     </form-beans>
     <!-- Termina aquí -->
 
+    <form-beans>
+        <form-bean name="formaReporteLugares"
+                   type="edu.uag.iidis.scec.vista.FormaReporteLugares">
+        </form-bean>
+
+        <form-bean name="formaReporteRecomendaciones"
+                   type="edu.uag.iidis.scec.vista.FormaReporteRecomendaciones">
+        </form-bean>                    
+    </form-beans> 
+
     <!-- Definición de Global Forward -->
     <global-forwards>
         <forward name="irInicio" path="/irInicio.do"/>
@@ -163,6 +173,16 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoLugares.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+
+        <action path="/solicitarReportesLugares"
+                type="edu.uag.iidis.scec.control.MCUReportesLugares"
+                parameter="solicitarReportesLugares"
+                name="formaReporteLugares"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaReporteLugares.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
         <!-- Aquí termina-->
 
         <!--Agregando action para el listado de recomendaciones -->
@@ -173,6 +193,16 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoRecomendaciones.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
+        <action path="/solicitarReportesRecomendaciones"
+                type="edu.uag.iidis.scec.control.MCUReportesRecomendaciones"
+                parameter="solicitarReportesRecomendaciones"
+                name="formaReporteRecomendaciones"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaReporteRecomendaciones.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
         <!-- Aquí termina-->

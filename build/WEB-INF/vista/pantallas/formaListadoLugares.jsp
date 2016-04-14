@@ -46,10 +46,10 @@
             <tr>
                 <td align="left" width="20%"><c:out value="${lugar.nombre}"/></td>
                 <td align="left" width="60%"><c:out value="${lugar.descripcion}"/></td>
-                <td align="left" width="60%"><c:out value="${lugar.poblacion}"/></td>
-                <td align="left" width="60%"><c:out value="${lugar.latitud}"/></td>
-                <td align="left" width="60%"><c:out value="${lugar.longitud}"/></td>
-                <td align="left" width="60%"><c:out value="${lugar.estado}"/></td>
+                <td align="left" width="20%"><c:out value="${lugar.poblacion}"/></td>
+                <td align="left" width="30%"><c:out value="${lugar.latitud}"/></td>
+                <td align="left" width="30%"><c:out value="${lugar.longitud}"/></td>
+                <td align="left" width="20%"><c:out value="${lugar.estado}"/></td>
                 <td align="left" width="20%">
                     <a href='solicitarModificarLugar.do?id=<c:out value="${lugar.id}"/>'
 					   class="HipervinculoAdmon">

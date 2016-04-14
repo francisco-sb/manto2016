@@ -44,10 +44,10 @@
         <c:forEach var="recomendacion" items="${formaListadoRecomendaciones.recomendaciones}">
             <tr>
                 <td align="left" width="20%"><c:out value="${recomendacion.nombre}"/></td>
-                <td align="left" width="60%"><c:out value="${recomendacion.usuario}"/></td>
-                <td align="left" width="60%"><c:out value="${recomendacion.fecha}"/></td>
+                <td align="left" width="20%"><c:out value="${recomendacion.usuario}"/></td>
+                <td align="left" width="20%"><c:out value="${recomendacion.fecha}"/></td>
                 <td align="left" width="60%"><c:out value="${recomendacion.comentario}"/></td>
-                <td align="left" width="60%"><c:out value="${recomendacion.calificacion}"/></td>
+                <td align="left" width="20%"><c:out value="${recomendacion.calificacion}"/></td>
                 <td align="left" width="20%">
                     <a href='solicitarModificarRecomendacion.do?id=<c:out value="${recomendacion.id}"/>'
 					   class="HipervinculoAdmon">

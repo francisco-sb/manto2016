@@ -69,4 +69,92 @@ public final class MCUListarLugares
         }
 
     }
+
+         public ActionForward buscarLugar(
+                    ActionMapping mapping,
+                    ActionForm form,
+                    HttpServletRequest request,
+                    HttpServletResponse response)
+                throws Exception {
+
+            if (log.isDebugEnabled()) {
+                log.debug(">solicitarListarLugares");
+            }
+
+            // Verifica si la acción fue cancelada por el usuario
+            if (isCancelled(request)) {
+                if (log.isDebugEnabled()) {
+                    log.debug("<La acción fue cancelada");
+                }
+                return (mapping.findForward("cancelar"));
+            }
+
+            FormaListadoLugares forma = (FormaListadoLugares)form;
+
+            ManejadorLugares mr = new ManejadorLugares();
+            Collection resultado = mr.listarLugaresPorNombre(forma.getNombre());
+
+            ActionMessages errores = new ActionMessages();
+            if (resultado != null) {
+                if ( resultado.isEmpty() ) {
+                    errores.add(ActionMessages.GLOBAL_MESSAGE,
+                        new ActionMessage("errors.registroVacio"));
+                    saveErrors(request, errores);
+                } else {
+                    forma.setLugares(resultado);
+                }
+                return (mapping.findForward("exito"));
+            } else {
+                log.error("Ocurrió un error de infraestructura");
+                errores.add(ActionMessages.GLOBAL_MESSAGE,
+                            new ActionMessage("errors.infraestructura"));                
+                saveErrors(request, errores);
+                return ( mapping.findForward("fracaso") );
+            }
+
+        }
+
+        public ActionForward buscarEstado(
+                    ActionMapping mapping,
+                    ActionForm form,
+                    HttpServletRequest request,
+                    HttpServletResponse response)
+                throws Exception {
+
+            if (log.isDebugEnabled()) {
+                log.debug(">solicitarListarLugares");
+            }
+
+            // Verifica si la acción fue cancelada por el usuario
+            if (isCancelled(request)) {
+                if (log.isDebugEnabled()) {
+                    log.debug("<La acción fue cancelada");
+                }
+                return (mapping.findForward("cancelar"));
+            }
+
+            FormaListadoLugares forma = (FormaListadoLugares)form;
+
+            ManejadorLugares mr = new ManejadorLugares();
+            Collection resultado = mr.buscaEstado(forma.getNombre());
+
+            ActionMessages errores = new ActionMessages();
+            if (resultado != null) {
+                if ( resultado.isEmpty() ) {
+                    errores.add(ActionMessages.GLOBAL_MESSAGE,
+                        new ActionMessage("errors.registroVacio"));
+                    saveErrors(request, errores);
+                } else {
+                    forma.setLugares(resultado);
+                }
+                return (mapping.findForward("exito"));
+            } else {
+                log.error("Ocurrió un error de infraestructura");
+                errores.add(ActionMessages.GLOBAL_MESSAGE,
+                            new ActionMessage("errors.infraestructura"));                
+                saveErrors(request, errores);
+                return ( mapping.findForward("fracaso") );
+            }
+
+        }
 }

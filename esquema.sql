@@ -43,8 +43,8 @@
         nombre varchar(255) not null unique,
         descripcion varchar(255),
         poblacion bigint,
-        latitud bigint,
-        longitud bigint,        
+        latitud varchar(255),
+        longitud varchar(255),        
         estado varchar(255),
         primary key (idLugar)
     );

@@ -74,6 +74,40 @@ public final class MCURegistrarLugar
         ManejadorLugares mr = new ManejadorLugares();
         int resultado = mr.crearLugar(lugar);
 
+        ///////////////////////////////////////////////
+        /*FileUploadForm fileUploadForm = (FileUploadForm)form;
+        
+        FormFile file = fileUploadForm.getFile();
+        
+        //Get the servers upload directory real path name
+        String filePath = 
+               getServlet().getServletContext().getRealPath("/") +"upload";
+        
+        //create the upload folder if not exists
+        File folder = new File(filePath);
+        if(!folder.exists()){
+            folder.mkdir();
+        }
+        
+        String fileName = file.getFileName();
+        
+        if(!("").equals(fileName)){  
+            
+            System.out.println("Server path:" +filePath);
+            File newFile = new File(filePath, fileName);
+              
+            if(!newFile.exists()){
+              FileOutputStream fos = new FileOutputStream(newFile);
+              fos.write(file.getFileData());
+              fos.flush();
+              fos.close();
+            }  
+            
+            request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
+            request.setAttribute("uploadedFileName",newFile.getName());
+        }*/
+        ////////////////////////////////////////////
+
         ActionMessages errores = new ActionMessages();
         switch (resultado) {
             case 0:   
@@ -103,4 +137,3 @@ public final class MCURegistrarLugar
     }
 
 }
-

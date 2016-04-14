@@ -9,6 +9,8 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.validator.ValidatorForm;
 
+import org.apache.struts.upload.FormFile;
+
 
 /**
  * Form bean para el registro de una nueva persona.
@@ -23,10 +25,13 @@ public final class FormaNuevoLugar
 
     //Nuevos campos
     private Long poblacion;
-    private Long latitud;
-    private Long longitud;
+    private String latitud;
+    private String longitud;
     private String estado; 
     Collection estados;   
+
+    ///////////////
+    private FormFile imagen;
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -54,19 +59,19 @@ public final class FormaNuevoLugar
         return (this.poblacion);
     }
 
-    public void setLatitud(Long latitud) {
+    public void setLatitud(String latitud) {
         this.latitud = latitud;
     }
 
-    public Long getLatitud() {
+    public String getLatitud() {
         return (this.latitud);
     }
 
-    public void setLongitud(Long longitud) {
+    public void setLongitud(String longitud) {
         this.longitud = longitud;
     }
 
-    public Long getLongitud() {
+    public String getLongitud() {
         return (this.longitud);
     }
 
@@ -86,6 +91,14 @@ public final class FormaNuevoLugar
         return (this.estados);
     }
 
+    public FormFile setImagen(FormFile imagen){
+        this.imagen = imagen;
+    }
+
+    public void getImagen(){
+        return imagen;
+    }
+
     //**********************************************
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
@@ -101,6 +114,13 @@ public final class FormaNuevoLugar
         ActionErrors errores = super.validate(mapping, request);
 
         // Validaciones no cubiertas por Struts-Validator
+        if (getImagen().getFileSize() == 0) {
+            errores.add("common.file.err",new ActionMessage("error.common.file.required"));
+
+            return errores;       
+        }
+
+
 
         return errores;
 

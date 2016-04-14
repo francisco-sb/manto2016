@@ -31,11 +31,11 @@
 
         <property name="latitud"
             column="latitud"
-            type="java.lang.Long" />    
+            type="java.lang.String" />    
 
         <property name="longitud"
             column="longitud"
-            type="java.lang.Long" />
+            type="java.lang.String" />
 
         <property name="estado"
             column="estado"

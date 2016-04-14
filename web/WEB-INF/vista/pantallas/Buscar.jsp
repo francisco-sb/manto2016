@@ -3,5 +3,5 @@
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
 <c:forEach var="lugar" items="${formaListadoLugares.lugares}">
-${lugar.estado}
+	<c:out value="${lugar.estado}"/>
 </c:forEach>

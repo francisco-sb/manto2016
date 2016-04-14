@@ -21,8 +21,8 @@ public class Lugar extends ClaseBase
 
     //Nuevos campos
     private Long poblacion;
-    private Long latitud;
-    private Long longitud;
+    private String latitud;
+    private String longitud;
     private String estado; 
 
     public Lugar() {
@@ -32,7 +32,7 @@ public class Lugar extends ClaseBase
         this.id = id;
     }
 
-    public Lugar(String nombre, String descripcion, Long poblacion, Long latitud, Long longitud, String estado){
+    public Lugar(String nombre, String descripcion, Long poblacion, String latitud, String longitud, String estado){
         this.nombre=nombre;
         this.descripcion=descripcion;
         this.poblacion=poblacion;
@@ -113,7 +113,7 @@ public class Lugar extends ClaseBase
      * Regresa la latitud del lugar.
      * @return Long
      */
-    public Long getLatitud() {
+    public String getLatitud() {
         return this.latitud;
     }
 
@@ -121,7 +121,7 @@ public class Lugar extends ClaseBase
      * Establece la latitud del lugar.
      * @return void
      */
-    public void setLatitud(Long latitud) {
+    public void setLatitud(String latitud) {
         this.latitud = latitud;
     }
 
@@ -129,7 +129,7 @@ public class Lugar extends ClaseBase
      * Regresa la longitud del lugar.
      * @return Long
      */
-    public Long getLongitud() {
+    public String getLongitud() {
         return this.longitud;
     }
 
@@ -137,7 +137,7 @@ public class Lugar extends ClaseBase
      * Establece la longitud del lugar.
      * @return void
      */
-    public void setLongitud(Long longitud) {
+    public void setLongitud(String longitud) {
         this.longitud = longitud;
     }
 
