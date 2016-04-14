@@ -9,23 +9,6 @@
 
     <form id="forma" action="procesarRegistroRecomendacion.do" method="post">
         <table>
-            <!--<tr>
-                <td colspan="2">
-                   <html:errors />
-                </td>
-            </tr>
-            <tr>
-                <td align="right">
-                    <fmt:message key="formaNuevoRecomendacion.etiqueta.buscar" />
-                </td>
-                <td align="left">
-                    <input type="text"
-                           id="buscar"  
-                           size="50" 
-                           maxlength="100" 
-                           onkeyup="buscar_lugar()" />
-                </td>
-            </tr>-->
             <tr>
                 <td align="right">
                     <fmt:message key="formaNuevoRecomendacion.etiqueta.nombre" />

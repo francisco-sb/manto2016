@@ -1,4 +1,4 @@
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
@@ -114,7 +114,7 @@
             </tr>
             <tr>
                 <td align="right">
-                    <!--<fmt:message key="formaNuevoLugar.etiqueta.estado" />-->Obten Coordenadas
+                    Obten Coordenadas
                 </td>
                 <td align="left">
                     <div id="mapa"></div>

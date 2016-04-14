@@ -73,4 +73,8 @@ public final class MCUReportesLugares
         }
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 844685b3f8cf098fd9e385777b28dcbe32f32156
