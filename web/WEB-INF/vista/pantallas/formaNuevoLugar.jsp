@@ -1,4 +1,4 @@
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
@@ -66,6 +66,7 @@
                 </td>
                 <td align="left">
                     <input type="text" 
+                           id="latitud" 
                            name="latitud" 
                            size="50" 
                            maxlength="100" 
@@ -77,7 +78,8 @@
                     <fmt:message key="formaNuevoLugar.etiqueta.longitud" />
                 </td>
                 <td align="left">
-                    <input type="text" 
+                    <input type="text"
+                           id="longitud"
                            name="longitud" 
                            size="50" 
                            maxlength="100" 
@@ -112,7 +114,7 @@
             </tr>
             <tr>
                 <td align="right">
-                    <!--<fmt:message key="formaNuevoLugar.etiqueta.estado" />-->Obten Coordenadas
+                    Obten Coordenadas
                 </td>
                 <td align="left">
                     <div id="mapa"></div>
