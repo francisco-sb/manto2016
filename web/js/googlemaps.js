@@ -1,11 +1,11 @@
 var map;
-var myCenter=new google.maps.LatLng(9.814103, -83.118708);
+var myCenter=new google.maps.LatLng(16.753056, -93.115556);
 
 function initialize()
 {
 var mapProp = {
   center:myCenter,
-  zoom:5,
+  zoom:6,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
 
@@ -17,14 +17,23 @@ var mapProp = {
 }
 
 function placeMarker(location) {
+
   var marker = new google.maps.Marker({
     position: location,
     map: map,
   });
+
+  var latitud = marker.position.lat();
+  var longitud = marker.position.lng();
+
   var infowindow = new google.maps.InfoWindow({
-    content: 'Latitud: ' + location.lat() + '<br>Longitud: ' + location.lng()
+    content: 'Latitud: ' + latitud + '<br>Longitud: ' + longitud
   });
+
   infowindow.open(map,marker);
+  
+  var inputLat = document.getElementById("latitud").setAttribute("value",latitud);
+  var inputLng = document.getElementById("longitud").setAttribute("value",longitud);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
